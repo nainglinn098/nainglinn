@@ -820,7 +820,7 @@
         }
     });
 
-    // Form တင်သွင်းခြင်း (Viber သို့ Order ပို့ရန်)
+    // Form တင်သွင်းခြင်း (ရိုးရိုး SMS ဖြင့် Order ပို့ရန်)
     orderForm.addEventListener("submit", (e) => {
         e.preventDefault();
         
@@ -830,25 +830,22 @@
         const phone = document.getElementById("customerPhone").value;
         const address = document.getElementById("customerAddress").value;
 
-        // ဆိုင်ရှင်၏ Viber ဖုန်းနံပါတ် (လိုအပ်ပါက သင့်နံပါတ်ဖြင့် ပြောင်းရန်)
-        const shopViberNumber = "959893385802"; 
+        // ဆိုင်ရှင်၏ ဖုန်းနံပါတ်
+        const shopPhone = "09893385802"; 
 
         // ပို့မည့် စာသားပုံစံ
-        const message = `မင်္ဂလာပါ ဆိုင်ရှင်ခင်ဗျာ - Order မှာချင်ပါတယ်ရှင့်။%0A%0A` +
-                        ` ပစ္စည်း: ${item} (${price})%0A` +
-                        ` အမည်: ${name}%0A` +
-                        ` ဖုန်း: ${phone}%0A` +
-                        ` လိပ်စာ: ${address}`;
+        const message = `Order မှာချင်ပါတယ်ရှင့်။\nပစ္စည်း: ${item} (${price})\nအမည်: ${name}\nဖုန်း: ${phone}\nလိပ်စာ: ${address}`;
 
-        // Viber App သို့ တိုက်ရိုက်လင့်ခ်ချိတ်ခြင်း
-        const viberUrl = `viber://chat?number=${shopViberNumber}&text=${message}`;
+        // ရိုးရိုး SMS ပို့မည့် လင့်ခ်ချိတ်ခြင်း
+        const smsUrl = `sms:${shopPhone}?body=${encodeURIComponent(message)}`;
         
-        window.location.href = viberUrl;
+        window.location.href = smsUrl;
         
         modal.style.display = "none";
         orderForm.reset();
     });
 </script>
+
 
 
 </body>
