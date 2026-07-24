@@ -785,53 +785,71 @@
     </footer>
 
     <!-- JavaScript for Modal Form -->
-    <script>
-        const modal = document.getElementById("orderModal");
-        const closeBtn = document.querySelector(".close-btn");
-        const orderBtns = document.querySelectorAll(".order-btn");
+   <script>
+    const modal = document.getElementById("orderModal");
+    const closeBtn = document.querySelector(".close-btn");
+    const orderBtns = document.querySelectorAll(".order-btn");
+    
+    const modalItemName = document.getElementById("modalItemName");
+    const modalItemPrice = document.getElementById("modalItemPrice");
+    const orderForm = document.getElementById("orderForm");
+
+    // Order Now ခလုတ်များကို နှိပ်လျှင် Modal ပွင့်ရန်
+    orderBtns.forEach(button => {
+        button.addEventListener("click", (e) => {
+            const card = e.target.closest(".menu-card");
+            const itemName = card.querySelector(".item-name").innerText;
+            const itemPrice = card.querySelector(".price").innerText;
+
+            modalItemName.value = itemName;
+            modalItemPrice.value = itemPrice;
+
+            modal.style.display = "flex";
+        });
+    });
+
+    // X ကိုနှိပ်၍ ပိတ်ရန်
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    // Modal ၏ အပြင်ဘက်ကို နှိပ်လျှင် ပိတ်ရန်
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // Form တင်သွင်းခြင်း (Viber သို့ Order ပို့ရန်)
+    orderForm.addEventListener("submit", (e) => {
+        e.preventDefault();
         
-        const modalItemName = document.getElementById("modalItemName");
-        const modalItemPrice = document.getElementById("modalItemPrice");
-        const orderForm = document.getElementById("orderForm");
+        const item = modalItemName.value;
+        const price = modalItemPrice.value;
+        const name = document.getElementById("customerName").value;
+        const phone = document.getElementById("customerPhone").value;
+        const address = document.getElementById("customerAddress").value;
 
-        // Order Now ခုတ်များကို နှိပ်လျှင် Modal ပွင့်ရန်
-        orderBtns.forEach(button => {
-            button.addEventListener("click", (e) => {
-                const card = e.target.closest(".menu-card");
-                const itemName = card.querySelector(".item-name").innerText;
-                const itemPrice = card.querySelector(".price").innerText;
+        // ဆိုင်ရှင်၏ Viber ဖုန်းနံပါတ် (လိုအပ်ပါက သင့်နံပါတ်ဖြင့် ပြောင်းရန်)
+        const shopViberNumber = "959267034299"; 
 
-                modalItemName.value = itemName;
-                modalItemPrice.value = itemPrice;
+        // ပို့မည့် စာသားပုံစံ
+        const message = `မင်္ဂလာပါ ဆိုင်ရှင်ခင်ဗျာ - Order မှာချင်ပါတယ်ရှင့်။%0A%0A` +
+                        ` ပစ္စည်း: ${item} (${price})%0A` +
+                        ` အမည်: ${name}%0A` +
+                        ` ဖုန်း: ${phone}%0A` +
+                        ` လိပ်စာ: ${address}`;
 
-                modal.style.display = "flex";
-            });
-        });
+        // Viber App သို့ တိုက်ရိုက်လင့်ခ်ချိတ်ခြင်း
+        const viberUrl = `viber://chat?number=${shopViberNumber}&text=${message}`;
+        
+        window.location.href = viberUrl;
+        
+        modal.style.display = "none";
+        orderForm.reset();
+    });
+</script>
 
-        // X ကိုနှိပ်၍ ပိတ်ရန်
-        closeBtn.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
-
-        // Modal ၏ အပြင်ဘက်ကို နှိပ်လျှင် ပိတ်ရန်
-        window.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-
-        // Form တင်သွင်းခြင်း (Order တင်ခြင်း)
-        orderForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const name = document.getElementById("customerName").value;
-            const item = modalItemName.value;
-            
-            alert(`ကျေးဇူးတင်ပါတယ် ${name} ခင်ဗျာ။ "${item}" အမှာစာကို အောင်မြင်စွာ လက်ခံရရှိပါပြီ။ ဆိုင်မှ အမြန်ဆုံး ဆက်သွယ်ပေးပါမည်။`);
-            
-            modal.style.display = "none";
-            orderForm.reset();
-        });
-    </script>
 
 </body>
 </html>
