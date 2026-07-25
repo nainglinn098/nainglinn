@@ -709,30 +709,31 @@ footer p {
         }
     });
 
-        // Form တင်သွင်းခြင်း (ရိုးရိုး SMS ဖြင့် Order ပို့ရန်)
     orderForm.addEventListener("submit", (e) => {
         e.preventDefault();
         
         const item = modalItemName.value;
         const price = modalItemPrice.value;
         const name = document.getElementById("customerName").value;
+        const phone = document.getElementById("customerPhone").value;
         const address = document.getElementById("customerAddress").value;
 
-        // ဆိုင်ရှင်၏ ဖုန်းနံပါတ်
-        const shopPhone = "09893385802"; 
+        const shopNumber = "959267034299"; 
 
-        // ပို့မည့် စာသားပုံစံ
-        const message = `Order မှာချင်ပါတယ်ဗျ/ရှင့်။\nပစ္စည်း: ${item} (${price})\nအမည်: ${name}\nလိပ်စာ: ${address}`;
+        const message = `မင်္ဂလာပါ ဆိုင်ရှင်ခင်ဗျာ - Order မှာချင်ပါတယ်ရှင့်။%0A%0A` +
+                        ` ပစ္စည်း: ${item} (${price})%0A` +
+                        ` အမည်: ${name}%0A` +
+                        ` ဖုန်း: ${phone}%0A` +
+                        ` လိပ်စာ: ${address}`;
 
-        // ရိုးရိုး SMS ပို့မည့် လင့်ခ်ချိတ်ခြင်း
-        const smsUrl = `sms:${shopPhone}?body=${encodeURIComponent(message)}`;
-        
-        window.location.href = smsUrl;
+        const chatUrl = `https://wa.me/${shopNumber}?text=${message}`;
+        window.location.href = chatUrl;
         
         modal.style.display = "none";
         orderForm.reset();
     });
 </script>
+
 
 
 
