@@ -720,14 +720,18 @@ footer p {
 
         const shopNumber = "959893385802"; 
 
-        const message = `မင်္ဂလာပါ ဆိုင်ရှင်ခင်ဗျာ - Order မှာချင်ပါတယ်ရှင့်။%0A%0A` +
-                        ` ပစ္စည်း: ${item} (${price})%0A` +
-                        ` အမည်: ${name}%0A` +
-                        ` ဖုန်း: ${phone}%0A` +
-                        ` လိပ်စာ: ${address}`;
+        const shopNumber = "099893385802"; // ရိုးရိုးဖုန်းနံပါတ် (09 ဖြင့်စရန်)
 
-        const chatUrl = `https://wa.me/${shopNumber}?text=${message}`;
-        window.location.href = chatUrl;
+const message = `မင်္ဂလာပါ ဆိုင်ရှင်ခင်ဗျာ - Order တင်ချင်လို့ပါ\n` +
+                `ပစ္စည်း: ${item} (${price})\n` +
+                `နာမည်: ${name}\n` +
+                `ဖုန်း: ${phone}\n` +
+                `လိပ်စာ: ${address}`;
+
+// ရိုးရိုး SMS ပို့ရန် uri ကို အသုံးပြုခြင်း
+const smsUrl = `sms:${shopNumber}?body=${encodeURIComponent(message)}`;
+window.location.href = smsUrl;
+
         
         modal.style.display = "none";
         orderForm.reset();
