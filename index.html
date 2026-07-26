@@ -157,19 +157,9 @@ gap: 30px;
     display: block;
 }
 
-                .menu-info {
+        .menu-info {
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
         }
-        .order-btn-container {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
 
         .menu-info h3 {
             color: var(--dark-red);
@@ -250,106 +240,15 @@ footer p {
   box-sizing: border-box;
 }
 
-        /* Modal Popup Styling */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 400px;
-            position: relative;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #333;
-        }
-
-        .modal-content h3 {
-            color: var(--primary-red);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .modal-form input, .modal-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .modal-form button {
-            width: 100%;
-            background-color: var(--primary-red);
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .modal-form button:hover {
-            background-color: var(--dark-red);
-        }
-                .price-order-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-        }
-
 
     </style>
 </head>
 <body>
-    <!-- Order Modal Form -->
-    <div id="orderModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3>မှာယူရန် အချက်အလက်များ ဖြည့်ပါ</h3>
-            <form id="orderForm" class="modal-form">
-                <input type="hidden" id="modalItemName">
-                <input type="hidden" id="modalItemPrice">
-                
-                <label>အမည်:</label>
-                <input type="text" id="customerName" placeholder="သင့်နာမည်ထည့်ပါ" required>
-                
-                <label>ဖုန်းနံပါတ်:</label>
-                <input type="tel" id="customerPhone" placeholder="ဆက်သွယ်ရန် ဖုန်းနံပါတ်" required>
-                
-                <label>ပို့ဆောင်ရမည့် လိပ်စာ:</label>
-                <textarea id="customerAddress" placeholder="အိမ်နံပါတ်၊ လမ်းနှင့် မြို့နယ်" required></textarea>
-                
-                <button type="submit">မှာယူမည်</button>
-            </form>
-        </div>
-    </div>
-
     <header>
     <nav>
         <div class="logo">
-            <img src="https://i.postimg.cc/fRtSz2b6/Picsart-26-07-19-12-45-06-732.png" alt="လိုဂို">
-            <span>  Shwe Nyi Ko 3 </span>
+            <img src="https://i.postimg.cc/Sx0spmrH/IMG-87ad4fddfbf4801a8663618672c68df6-V.png" alt="လိုဂို">
+            <span>Shwe Nyi Ko 2</span>
         </div>
         <ul>
             <li><a href="#home"></a></li>
@@ -362,7 +261,7 @@ footer p {
 
     <!-- Home Section -->
 <section id="home" class="hero">
-    <h1>ရွှေညီကို 3<br><span style="font-size: 1.5rem; white-space: nowrap;">လက်ဖက်ရည်နှင့် စားဖွယ်စုံ</span></h1>
+    <h1>ရွှေညီကို 2<br><span style="font-size: 1.5rem; white-space: nowrap;">လက်ဖက်ရည်နှင့် စားဖွယ်စုံ</span></h1>
     <p>မြန်မာ့ လက်ဖက်ရည်အရသာနှင့် <br>အခြားသော စားဖွယ်စုံများကို တစ်နေရာတည်းတွင် ခံစားလိုက်ပါ</p>
     <a href="#menu" class="btn">မင်္ဂလာပါ</a>
 </section>
@@ -376,33 +275,26 @@ footer p {
             <div class="menu-card">
                 <img src="https://i.postimg.cc/J7dKhFq0/Green-International-Tea-Day-Intagram-Post-20260720-071038-0000.png" alt="လက်ဖက်ရည်">
                 <div class="menu-info">
-                    <h3>လက်ဖက်ရည်</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၁,၅၀၀ ကျပ်</div>
+                    <h3>စပယ်ရှယ် လက်ဖက်ရည်</h3>
+                    <p>နို့ဆီ၊ နို့စိမ်းတို့ဖြင့် အထူးကျိုချက်ထားသော  <br>ရွှေညီကို ရိုးရာလက်ဖက်ရည်</p>
+                    <div class="price">၂,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 2 -->
             <div class="menu-card">
                 <img src="https://i.postimg.cc/9My6thQz/Untitled-design-20260720-064506-0000.png" alt="လက်ဖက်ရည်">
                 <div class="menu-info">
-                    <h3>ကော်ဖီ</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၁,၅၀၀ ကျပ်</div>
+                    <h3>စပယ်ရှယ် ကော်ဖီ</h3>
+                    <p>နို့ဆီ၊ နို့စိမ်းတို့ဖြင့် အထူးကျိုချက်ထားသော  <br>ရွှေညီကို ကော်ဖီ</p>
+                    <div class="price">၂,၀၀၀ ကျပ်</div>
                 </div>
                 </div>
                 <!-- Item 3 -->
             <div class="menu-card">
-                <img src="https://i.postimg.cc/dVx5kZ6v/Green-and-Beige-Burger-Photo-Creative-Promotional-Poster-20260724-073001-0000.png" alt="စမူဆာ">
+                <img src="https://i.postimg.cc/FzNtHHQL/Green-and-Beige-Burger-Photo-Creative-Promotional-Poster-20260720-201107-0000.png" alt="စမူဆာ">
                 <div class="menu-info">
                     <h3>စမူဆာ</h3>
-                    <!-- Order Now ခလုတ်ကို ညာဘက်သို့ ပို့ရန် div ထည့်ခြင်း -->
-         <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
+                    <p> ကြက်သွန်၊ အာလူးပြုပ်ထားသဖြင့် ခံတွင်းတွေ့စေမည့် အရသာ</p>
                     <div class="price">၅,၀၀ ကျပ်</div>
                 </div>
             </div>
@@ -411,10 +303,8 @@ footer p {
                 <img src="https://i.postimg.cc/ZnWN0pzZ/Red-Orange-Minimalist-Exclusive-Steak-Poster-20260720-200856-0000.png" alt="အီကြာကွေး">
                 <div class="menu-info">
                     <h3>အီကြာကွေး</h3>
-                    <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၈,၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၁,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 5 -->
@@ -422,32 +312,26 @@ footer p {
                 <img src="https://i.postimg.cc/52QMp0bz/Yellow-and-Brown-Salad-Photo-Food-Poster-20260720-200726-0000.png" alt="ကြက်ဥပေါင်မုန့်ကြော်">
                 <div class="menu-info">
                     <h3>ကြက်ဥပေါင်မုန့်ကြော်</h3>
-                    <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၁,၈၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၃,၀၀၀ ကျပ်</div>
+                </div>
+            </div>
+                <!-- Item 6 -->
+            <div class="menu-card">
+                <img src="https://i.postimg.cc/y6yMLQxn/Orange-Bold-Playful-Food-Promotion-Poster-20260723-082703-0000.png" alt="King ပေါက်စီ">
+                <div class="menu-info">
+                    <h3>King ပေါက်စီ</h3>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၂,၅၀၀ ကျပ်</div>
                 </div>
             </div>
               <!-- Item 7 -->
             <div class="menu-card">
-                <img src="https://i.ibb.co/zhdKkkbx/Red-White-Orange-Modern-Energy-Drink-Facebook-Post-20260720-093452-0000.png" alt="Energy Drink" style="max-width: 100%; height: auto;" />
+                <img src="https://i.postimg.cc/wvCWq6Sp/Red-White-Orange-Modern-Energy-Drink-(Facebook-Post)-20260720-093452-0000.png" alt="Sting">
                 <div class="menu-info">
                     <h3>Sting</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၂,၀၀၀ ကျပ်</div>
-                </div>
-            </div>
-            <!-- Item 8 -->
-            <div class="menu-card">
-                <img src="https://i.ibb.co/r2XmmSsN/Multicolor-Modern-Bold-Soft-Drinks-Poster-Document-20260720-092332-0000.png" alt="Burn">
-                <div class="menu-info">
-                    <h3>နို့အေး</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၂,၀၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၂,၅၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 8 -->
@@ -455,21 +339,44 @@ footer p {
                 <img src="https://i.ibb.co/ZRq1Q4tM/Royal-D-20260724-161736-0000.png" alt="Royal-D-">
                 <div class="menu-info">
                     <h3>Royal-D</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
+                    <p>Oder Now ၊ 09783545259</p>
                     <div class="price">၂,၅၀၀ ကျပ်</div>
+                </div>
+            </div>
+            <!-- Item 11 -->
+            <div class="menu-card">
+   <img src="https://i.ibb.co/8gctKjVD/blue-fresh-drink-poster-20260723-151346-0000.png" alt="Blue Fresh Drink" style="max-width: 100%; height: auto;" />
+                <div class="menu-info">
+                    <h3>Lipo</h3>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၃,၀၀၀ ကျပ်</div>
+                </div>
+            </div>
+            <!-- Item 8 -->
+            <div class="menu-card">
+                <img src="https://i.postimg.cc/wB529rSS/Orange-Gradients-Drink-Poster-20260723-092700-0000.png" alt="Burn">
+                <div class="menu-info">
+                    <h3>Burn</h3>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၃,၀၀၀ ကျပ်</div>
+                </div>
+            </div>
+            <!-- Item 8 -->
+            <div class="menu-card">
+                <img src="https://i.postimg.cc/T1jzrhb2/Orange-and-Green-Simple-Soda-Promo-Instagram-Post-20260723-081258-0000.png" alt="Burn">
+                <div class="menu-info">
+                    <h3>Coca cola</h3>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၃,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 9 -->
             <div class="menu-card">
-               <img src="https://i.ibb.co/WWXw0xRd/Green-and-Yellow-Energy-Drink-Product-Instagram-Post-20260720-093831-0000.png" alt="Carabao" style="max-width: 100%; height: auto;" />
+                <img src="https://i.postimg.cc/fyFMT0MJ/Green-and-Yellow-Energy-Drink-Product-Instagram-Post-20260720-093831-0000.png" alt="Carabao">
                 <div class="menu-info">
                     <h3>Carabao</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၃,၀၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၃,၅၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 10 -->
@@ -477,21 +384,17 @@ footer p {
                 <img src="https://i.postimg.cc/tCxjNJXg/Soft-Blue-and-Blue-Drink-Advertisement-Cold-Brew-Energy-Drink-Flyer-20260720-094808-0000.png" alt="Shark">
                 <div class="menu-info">
                     <h3>Shark</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၃,၀၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၃,၅၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 11 -->
             <div class="menu-card">
-                <img src="https://i.postimg.cc/kgK28kF9/Brown-and-Yellow-Simple-Food-Sale-Double-Sided-Poster-A3-Landscape-20260724-073112-0000.png" alt="ရှမ်းခေါက်ဆွဲ">
+                <img src="https://i.postimg.cc/bwYdC1sc/Brown-and-Yellow-Simple-Food-Sale-Double-Sided-Poster-A3-Landscape-20260720-200540-0000.png" alt="ရှမ်းခေါက်ဆွဲ">
                 <div class="menu-info">
                     <h3>ရှမ်းခေါက်ဆွဲ</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၄,၀၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၄,၅၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 12 -->
@@ -499,10 +402,17 @@ footer p {
                 <img src="https://i.postimg.cc/GpkN4Tx4/Dumplings-Food-Instagram-Post-in-Yellow-Brown-Fun-Illustrative-Style-20260720-200454-0000.png" alt="ဆီချက်">
                 <div class="menu-info">
                     <h3>ဆီချက်</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၃,၅၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၄,၀၀၀ ကျပ်</div>
+                </div>
+            </div>
+            <!-- Item 13 -->
+            <div class="menu-card">
+                <img src="https://i.postimg.cc/CLKQmw9W/Red-And-Yellow-Illustration-Special-Noodle-Menu-Instagram-Post-20260723-085850-0000.png" alt="ရွှေတောင်ခေါက်ဆွဲ">
+                <div class="menu-info">
+                    <h3>ရွှေတောင်ခေါက်ဆွဲ</h3>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၄,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 14 -->
@@ -510,10 +420,17 @@ footer p {
                 <img src="https://i.postimg.cc/jS86ZxqL/Dumplings-Food-Instagram-Post-in-Yellow-Brown-Fun-Illustrative-Style-20260720-200349-0000.png" alt="နန်းကြီးသုပ်">
                 <div class="menu-info">
                     <h3>နန်းကြီးသုပ်</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၃,၀၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၄,၀၀၀ ကျပ်</div>
+                </div>
+            </div>
+               <!-- Item 15 -->
+            <div class="menu-card">
+                <img src="https://i.postimg.cc/L58NCVQf/Brown-and-Yellow-Modern-Noodles-Food-Promotion-Instagram-Post-20260723-091120-0000.png" alt="နန်း​ပြားသုပ်">
+                <div class="menu-info">
+                    <h3>နန်းပြားသုပ်</h3>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၄,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 16 -->
@@ -521,31 +438,25 @@ footer p {
                 <img src="https://i.postimg.cc/Twg7M3rz/Red-and-Yellow-Illustrated-Noodle-Promotion-Banner-20260720-200151-0000.png" alt="မုန့်ဟင်းခါး">
                 <div class="menu-info">
                     <h3>မုန့်ဟင်းခါး</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
+                    <p>Oder Now ၊ 09783545259</p>
                     <div class="price">၂,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 17 -->
             <div class="menu-card">
-                <img src="https://i.postimg.cc/qMnKXh4b/Green-Orange-and-Red-Modern-Crispy-Dumplings-Social-Media-20260724-073309-0000.png" alt="ခေါက်ဆွဲသုပ်">
+                <img src="https://i.postimg.cc/RZRmYY2X/Green-Orange-and-Red-Modern-Crispy-Dumplings-Social-Media-20260720-195956-0000.png" alt="ခေါက်ဆွဲသုပ်">
                 <div class="menu-info">
                     <h3>ခေါက်ဆွဲသုပ်</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
+                    <p>Oder Now ၊ 09783545259</p>
                     <div class="price">၂,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 18 -->
             <div class="menu-card">
-                <img src="https://i.postimg.cc/yNrWzs7h/Red-Illustrative-Menu-Korean-Food-Poster-20260724-073408-0000.png" alt="ကြာဇံသုပ်">
+                <img src="https://i.postimg.cc/CKz2460w/Red-Illustrative-Menu-Korean-Food-Poster-20260720-195809-0000.png" alt="ကြာဇံသုပ်">
                 <div class="menu-info">
                     <h3>ကြာဇံသုပ်</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
+                    <p>Oder Now ၊ 09783545259</p>
                     <div class="price">၂,၀၀၀ ကျပ်</div>
                 </div>
             </div>
@@ -554,9 +465,7 @@ footer p {
                 <img src="https://i.postimg.cc/nh52nV8n/blue-Delicious-food-menu-(Facebook-Post)-20260720-195604-0000.png" alt="မုန့်ဖတ်သုပ်">
                 <div class="menu-info">
                     <h3>မုန့်ဖတ်သုပ်</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
+                    <p>Oder Now ၊ 09783545259</p>
                     <div class="price">၂,၀၀၀ ကျပ်</div>
                 </div>
             </div>
@@ -565,43 +474,62 @@ footer p {
                  <img src="https://i.postimg.cc/YSTdz6Mf/Green-Rice-Photo-Recipe-Pinterest-Graphic-20260720-195333-0000.png" alt="ထမင်းကြော်">
                 <div class="menu-info">
                     <h3>ထမင်းကြော် ကြက်ဥ</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၂,၅၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၃,၀၀၀ ကျပ်</div>
+                </div>
+            </div>
+            <!-- Item 21 -->
+            <div class="menu-card">
+                <img src="https://i.postimg.cc/YSTdz6Mf/Green-Rice-Photo-Recipe-Pinterest-Graphic-20260720-195333-0000.png" alt="ထမင်းကြော်">
+                <div class="menu-info">
+                    <h3>ထမင်းကြော် အသား</h3>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၆,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 22 -->
             <div class="menu-card">
-                <img src="https://i.postimg.cc/Hs2Ygdtf/Green-Fresh-Salad-Menu-Promo-Poster-20260724-073530-0000.png" alt="ထမင်းကြော်">
+                <img src="https://i.postimg.cc/0jKxHdww/Green-Fresh-Salad-Menu-Promo-Poster-20260720-194937-0000.png" alt="ထမင်းကြော်">
                 <div class="menu-info">
                     <h3>ထမင်းသုပ်</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၃,၀၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၄,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 23 -->
             <div class="menu-card">
-                <img src="https://i.postimg.cc/0NSh9CsC/White-and-Red-Modern-Delicious-Rice-Bowl-Instagram-Post-20260724-073748-0000.png" alt="ထမင်းကြော်">
+                <img src="https://i.postimg.cc/mZ9gjBNy/White-and-Red-Modern-Delicious-Rice-Bowl-Instagram-Post-20260720-195151-0000.png" alt="ထမင်းကြော်">
                 <div class="menu-info">
                     <h3>လက်ဖက်ထမင်း</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၃,၀၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၄,၀၀၀ ကျပ်</div>
+                </div>
+            </div>
+            <!-- Item 24 -->
+            <div class="menu-card">
+                <img src="https://i.postimg.cc/MKd2bF4d/Orange-White-Minimalist-Italian-Food-Promotion-Pizza-Poster-20260720-205141-0000.png" alt="ထမင်းကြော်">
+                <div class="menu-info">
+                    <h3>ပုန်းရည်ကြီးထမင်း</h3>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၄,၀၀၀ ကျပ်</div>
+                </div>
+            </div>
+            <!-- Item 25 -->
+            <div class="menu-card">
+                <img src="https://i.postimg.cc/rp5fgds4/Green-Modern-Creative-Delicious-Fresh-Salad-Promo-Poster-20260720-210039-0000.png" alt="ထမင်းကြော်">
+                <div class="menu-info">
+                    <h3>မြန်မာ ထမင်းဟင်း</h3>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၆,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 26 -->
             <div class="menu-card">
-                <img src="https://i.postimg.cc/tgFvKC36/Green-Modern-Caesar-Salad-Flyer-20260724-073856-0000.png" alt="ထမင်းကြော်">
+                <img src="https://i.postimg.cc/MKh04Whb/Green-Modern-Caesar-Salad-Flyer-20260720-194352-0000.png" alt="ထမင်းကြော်">
                 <div class="menu-info">
                     <h3>လက်ဖက်သုပ်</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၂,၅၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၄,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 27 -->
@@ -609,10 +537,8 @@ footer p {
                 <img src="https://i.postimg.cc/NGKpPP5W/Fresh-And-Healthy-Delicious-Salad-Facebook-Post-20260720-193053-0000.png" alt="ထမင်းကြော်">
                 <div class="menu-info">
                     <h3>ဂျင်းသုပ်</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၂,၅၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၄,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 28 -->
@@ -620,10 +546,8 @@ footer p {
                 <img src="https://i.postimg.cc/7LLgJf7D/Yellow-White-Healthy-Fresh-Organic-Salad-Poster-20260720-193234-0000.png" alt="ထမင်းကြော်">
                 <div class="menu-info">
                     <h3>မြင်းခွာရွက်သုပ်</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၂,၅၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၄,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 28 -->
@@ -631,31 +555,43 @@ footer p {
                 <img src="https://i.postimg.cc/T2nWwrSf/Green-Salad-Photo-Food-Instagram-Post-20260720-154902-0000.png" alt="ထမင်းကြော်">
                 <div class="menu-info">
                     <h3>ပဲခြမ်းသုပ်</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၂,၅၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၄,၀၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 29 -->
             <div class="menu-card">
-                <img src="https://i.postimg.cc/yxGTJwhB/Green-Minimalist-Healthy-Salad-Instagram-Post-20260724-074005-0000.png" alt="ထမင်းကြော်">
+                <img src="https://i.postimg.cc/cCTx34wT/Green-Minimalist-Healthy-Salad-Instagram-Post-20260720-194547-0000.png" alt="ထမင်းကြော်">
                 <div class="menu-info">
                     <h3>ခရမ်းချဥ်သီးသုပ်</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
-                    <div class="price">၂,၅၀၀ ကျပ်</div>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၄,၀၀၀ ကျပ်</div>
+                </div>
+            </div>
+            <!-- Item 30 -->
+            <div class="menu-card">
+                <img src="https://i.postimg.cc/dQWcGfgN/Green-Modern-Healthy-Food-Salad-Pinterest-Pin-20260720-215018-0000.png" alt="ထမင်းကြော်">
+                <div class="menu-info">
+                    <h3>​ဆေးဘဲဥသုပ်</h3>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၅,၅၀၀ ကျပ်</div>
+                </div>
+            </div>
+            <!-- Item 30 -->
+            <div class="menu-card">
+                <img src="https://i.ibb.co/jv7M6SSL/Green-White-Miinimalist-Vegetable-Salad-Promotion-Instagram-Post-20260723-221924-0000.png" alt="ထမင်းကြော်">
+                <div class="menu-info">
+                    <h3>ကျောက်ပွင့်သုပ်</h3>
+                    <p>Oder Now ၊ 09783545259</p>
+                    <div class="price">၅,၅၀၀ ကျပ်</div>
                 </div>
             </div>
             <!-- Item 31 -->
             <div class="menu-card">
                 <img src="https://i.postimg.cc/hjP3jD4T/Picsart-26-07-17-15-31-54-049-copy-1414x2000.jpg" alt="ထမင်းကြော်">
                 <div class="menu-info">
-                    <h3>ကျေးဇူးတင်ရှိခြင်း</h3>
-                     <div class="order-btn-container">
-    <button class="btn order-btn" style="padding: 5px 15px; font-size: 0.9rem;">Order Now</button>
-</div>
+                    <h3>​ကျေးဇူးတင်ရှိခြင်း</h3>
+                    <p>Oder Now ၊ 09783545259</p>
                     <div class="price"></div>
                 </div>
             </div>
@@ -667,9 +603,9 @@ footer p {
         <div class="contact-content">
             <div class="contact-info">
                 <h3>ဆိုင်တည်နေရာနှင့် ဖုန်းနံပါတ်</h3>
-                <p><strong>လိပ်စာ:</strong> အမှတ် (၉၉၆)၊(ပင်းယလမ်း) <br>တောင်ဥက္ကလာ၊ ရန်ကုန်မြို့။</p>
-                <p><strong>ဖုန်းနံပါတ်:</strong> 09267034299</p>
-                <p><strong>ဖွင့်လှစ်ချိန်:</strong> မနက် ၅:၀၀ နာရီမှ ည ၉:၀၀ နာရီအထိ</p>
+                <p><strong>လိပ်စာ:</strong> အမှတ် (၁၁၇)၊(နတ်စင်လမ်း) <br>ကြည့်မြင်တိုင်၊ ရန်ကုန်မြို့။</p>
+                <p><strong>ဖုန်းနံပါတ်:</strong> 09783545259</p>
+                <p><strong>ဖွင့်လှစ်ချိန်:</strong> မနက် ၅:၀၀ နာရီမှ ည ၈:၃၀ နာရီအထိ</p>
             </div>
               </div>
                 </div>
@@ -677,68 +613,6 @@ footer p {
     <footer>
         <p>&copy; 2026 ရွှေညီကို လက်ဖက်ရည် နှင့် စားဖွယ်စုံ။ မူပိုင်ခွင့်  ။</p></div>
     </footer>
-<script>
-    const modal = document.getElementById("orderModal");
-    const closeBtn = document.querySelector(".close-btn");
-    const orderBtns = document.querySelectorAll(".order-btn");
-    
-    const modalItemName = document.getElementById("modalItemName");
-    const modalItemPrice = document.getElementById("modalItemPrice");
-    const orderForm = document.getElementById("orderForm");
-
-    orderBtns.forEach(button => {
-        button.addEventListener("click", (e) => {
-            const card = e.target.closest(".menu-card");
-            const itemName = card.querySelector("h3").innerText;
-            const itemPrice = card.querySelector(".price").innerText;
-
-            modalItemName.value = itemName;
-            modalItemPrice.value = itemPrice;
-
-            modal.style.display = "flex";
-        });
-    });
-
-    closeBtn.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-
-    window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-
-    orderForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        
-        const item = modalItemName.value;
-        const price = modalItemPrice.value;
-        const name = document.getElementById("customerName").value;
-        const phone = document.getElementById("customerPhone").value;
-        const address = document.getElementById("customerAddress").value;
-
-
-        const shopNumber = "09267034299"; // ရိုးရိုးဖုန်းနံပါတ် (09 ဖြင့်စရန်)
-
-const message = `မင်္ဂလာပါ ဆိုင်ရှင်ခင်ဗျာ - Order တင်ချင်လို့ပါ\n` +
-                `ပစ္စည်း: ${item} (${price})\n` +
-                `နာမည်: ${name}\n` +
-                `ဖုန်း: ${phone}\n` +
-                `လိပ်စာ: ${address}`;
-
-// ရိုးရိုး SMS ပို့ရန် uri ကို အသုံးပြုခြင်း
-const smsUrl = `sms:${shopNumber}?body=${encodeURIComponent(message)}`;
-window.location.href = smsUrl;
-
-        
-        modal.style.display = "none";
-        orderForm.reset();
-    });
-</script>
-
-
-
 
 </body>
 </html>
