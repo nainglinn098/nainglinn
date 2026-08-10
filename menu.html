@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ရွှေညီကို 3 - Menu</title>
+
+    <style>
+        :root {
+            --primary-red: #d32f2f;
+            --dark-red: #b71c1c;
+            --accent-gold: #ffc107;
+            --bg-light: #f7f7f7;
+            --text-dark: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pyidaungsu', 'Myanmar Text', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: var(--primary-red);
+            padding: 5px 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .logo img {
+            width: auto;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 18px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* ================= MENU HEADER ================= */
+
+        .menu-header {
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.55),
+                    rgba(0,0,0,0.55)
+                ),
+                url('https://i.postimg.cc/mkhRRnS0/Tea-20260719-071254-0000.png')
+                center/cover no-repeat;
+
+            text-align: center;
+            color: white;
+            padding: 45px 20px;
+        }
+
+        .menu-header h1 {
+            color: var(--accent-gold);
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        .menu-header p {
+            font-size: 1.1rem;
+        }
+
+        /* ================= CONTAINER ================= */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 35px 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-red);
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        /* ================= MENU ================= */
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .menu-info {
+            padding: 18px;
+        }
+
+        .menu-info h3 {
+            color: var(--dark-red);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .menu-info p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: var(--primary-red);
+            font-size: 1.15rem;
+            font-weight: bold;
+        }
+
+        /* ================= CONTACT ================= */
+
+        #contact {
+            scroll-margin-top: 80px;
+        }
+
+        .contact-content {
+            background: white;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .contact-info h3 {
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+        }
+
+        /* ================= CALL BUTTON ================= */
+
+        .call-button {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 25px auto 0;
+            background: #198754;
+            color: white;
+            text-align: center;
+            padding: 13px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .call-button:hover {
+            background: #146c43;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: var(--dark-red);
+            color: white;
+            text-align: center;
+            padding: 14px 10px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            .logo img {
+                height: 43px;
+            }
+
+            nav ul {
+                gap: 8px;
+            }
+
+            nav ul li a {
+                font-size: 0.85rem;
+            }
+
+            .menu-header {
+                padding: 35px 15px;
+            }
+
+            .menu-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .menu-info {
+                padding: 12px;
+            }
+
+            .menu-info h3 {
+                font-size: 1rem;
+            }
+
+            .menu-info p {
+                font-size: 0.82rem;
+            }
+
+            .price {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+    <nav>
+
+        <div class="logo">
+
+            <img
+                src="https://i.postimg.cc/dDcDtnJn/1785071249733.png"
+                alt="ရွှေညီကို Logo"
+            >
+
+            <span>Shwe Nyi Ko 3</span>
+
+        </div>
+
+        <ul>
+            <li>
+                <a href="#menu">Menu</a>
+            </li>
+
+            <li>
+                <a href="#contact">ဆက်သွယ်ရန်</a>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<!-- ================= MENU HEADER ================= -->
+
+<section class="menu-header">
+
+    <h1>
+        ရွှေညီကို 3
+    </h1>
+
+    <p>
+        လက်ဖက်ရည်နှင့် စားဖွယ်စုံ
+    </p>
+
+</section>
+
+
+<!-- ================= MENU ================= -->
+
+<section class="container" id="menu">
+
+    <h2 class="section-title">
+        Breakfast And Drinks
+    </h2>
+
+
+    <div class="menu-grid">
+
+
+        <!-- 1 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/J7dKhFq0/Green-International-Tea-Day-Intagram-Post-20260720-071038-0000.png"
+                alt="လက်ဖက်ရည်"
+            >
+
+            <div class="menu-info">
+
+                <h3>
+                    စပယ်ရှယ် လက်ဖက်ရည်
+                </h3>
+
+                <p>
+                    နို့ဆီ၊ နို့စိမ်းတို့ဖြင့်
+                    အထူးကျိုချက်ထားသော
+                    ရွှေညီကို ရိုးရာလက်ဖက်ရည်
+                </p>
+
+                <div class="price">
+                    ၁,၅၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/9My6thQz/Untitled-design-20260720-064506-0000.png"
+                alt="ကော်ဖီ"
+            >
+
+            <div class="menu-info">
+
+                <h3>
+                    စပယ်ရှယ် ကော်ဖီ
+                </h3>
+
+                <p>
+                    နို့ဆီ၊ နို့စိမ်းတို့ဖြင့်
+                    အထူးကျိုချက်ထားသော
+                    ရွှေညီကို ကော်ဖီ
+                </p>
+
+                <div class="price">
+                    ၁,၅၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 3 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/dVx5kZ6v/Green-and-Beige-Burger-Photo-Creative-Promotional-Poster-20260724-073001-0000.png"
+                alt="စမူဆာ"
+            >
+
+            <div class="menu-info">
+
+                <h3>စမူဆာ</h3>
+
+                <p>
+                    ကြက်သွန်၊ အာလူးပြုတ်ထားသဖြင့်
+                    ခံတွင်းတွေ့စေမည့် အရသာ
+                </p>
+
+                <div class="price">
+                    ၅၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 4 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/ZnWN0pzZ/Red-Orange-Minimalist-Exclusive-Steak-Poster-20260720-200856-0000.png"
+                alt="အီကြာကွေး"
+            >
+
+            <div class="menu-info">
+
+                <h3>အီကြာကွေး</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၈၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/52QMp0bz/Yellow-and-Brown-Salad-Photo-Food-Poster-20260720-200726-0000.png"
+                alt="ကြက်ဥပေါင်မုန့်ကြော်"
+            >
+
+            <div class="menu-info">
+
+                <h3>ကြက်ဥပေါင်မုန့်ကြော်</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၁,၈၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 6 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.ibb.co/zhdKkkbx/Red-White-Orange-Modern-Energy-Drink-Facebook-Post-20260720-093452-0000.png"
+                alt="Sting"
+            >
+
+            <div class="menu-info">
+
+                <h3>Sting</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၂,၀၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 7 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.ibb.co/r2XmmSsN/Multicolor-Modern-Bold-Soft-Drinks-Poster-Document-20260720-092332-0000.png"
+                alt="နို့အေး"
+            >
+
+            <div class="menu-info">
+
+                <h3>နို့အေး</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၂,၀၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 8 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.ibb.co/ZRq1Q4tM/Royal-D-20260724-161736-0000.png"
+                alt="Royal-D"
+            >
+
+            <div class="menu-info">
+
+                <h3>Royal-D</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၂,၅၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 9 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.ibb.co/WWXw0xRd/Green-and-Yellow-Energy-Drink-Product-Instagram-Post-20260720-093831-0000.png"
+                alt="Carabao"
+            >
+
+            <div class="menu-info">
+
+                <h3>Carabao</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၃,၀၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/tCxjNJXg/Soft-Blue-and-Blue-Drink-Advertisement-Cold-Brew-Energy-Drink-Flyer-20260720-094808-0000.png"
+                alt="Shark"
+            >
+
+            <div class="menu-info">
+
+                <h3>Shark</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၃,၀၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/kgK28kF9/Brown-and-Yellow-Simple-Food-Sale-Double-Sided-Poster-A3-Landscape-20260724-073112-0000.png"
+                alt="ရှမ်းခေါက်ဆွဲ"
+            >
+
+            <div class="menu-info">
+
+                <h3>ရှမ်းခေါက်ဆွဲ</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၄,၀၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/GpkN4Tx4/Dumplings-Food-Instagram-Post-in-Yellow-Brown-Fun-Illustrative-Style-20260720-200454-0000.png"
+                alt="ဆီချက်"
+            >
+
+            <div class="menu-info">
+
+                <h3>ဆီချက်</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၃,၅၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 13 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/jS86ZxqL/Dumplings-Food-Instagram-Post-in-Yellow-Brown-Fun-Illustrative-Style-20260720-200349-0000.png"
+                alt="နန်းကြီးသုပ်"
+            >
+
+            <div class="menu-info">
+
+                <h3>နန်းကြီးသုပ်</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၃,၀၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 14 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/Twg7M3rz/Red-and-Yellow-Illustrated-Noodle-Promotion-Banner-20260720-200151-0000.png"
+                alt="မုန့်ဟင်းခါး"
+            >
+
+            <div class="menu-info">
+
+                <h3>မုန့်ဟင်းခါး</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၂,၀၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 15 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/qMnKXh4b/Green-Orange-and-Red-Modern-Crispy-Dumplings-Social-Media-20260724-073309-0000.png"
+                alt="ခေါက်ဆွဲသုပ်"
+            >
+
+            <div class="menu-info">
+
+                <h3>ခေါက်ဆွဲသုပ်</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၂,၀၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 16 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/yNrWzs7h/Red-Illustrative-Menu-Korean-Food-Poster-20260724-073408-0000.png"
+                alt="ကြာဇံသုပ်"
+            >
+
+            <div class="menu-info">
+
+                <h3>ကြာဇံသုပ်</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၂,၀၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 17 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/nh52nV8n/blue-Delicious-food-menu-(Facebook-Post)-20260720-195604-0000.png"
+                alt="မုန့်ဖတ်သုပ်"
+            >
+
+            <div class="menu-info">
+
+                <h3>မုန့်ဖတ်သုပ်</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၂,၀၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 18 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/YSTdz6Mf/Green-Rice-Photo-Recipe-Pinterest-Graphic-20260720-195333-0000.png"
+                alt="ထမင်းကြော်"
+            >
+
+            <div class="menu-info">
+
+                <h3>ထမင်းကြော် ကြက်ဥ</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၂,၅၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 19 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/Hs2Ygdtf/Green-Fresh-Salad-Menu-Promo-Poster-20260724-073530-0000.png"
+                alt="ထမင်းသုပ်"
+            >
+
+            <div class="menu-info">
+
+                <h3>ထမင်းသုပ်</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၃,၀၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 20 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/0NSh9CsC/White-and-Red-Modern-Delicious-Rice-Bowl-Instagram-Post-20260724-073748-0000.png"
+                alt="လက်ဖက်ထမင်း"
+            >
+
+            <div class="menu-info">
+
+                <h3>လက်ဖက်ထမင်း</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၃,၀၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 21 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/tgFvKC36/Green-Modern-Caesar-Salad-Flyer-20260724-073856-0000.png"
+                alt="လက်ဖက်သုပ်"
+            >
+
+            <div class="menu-info">
+
+                <h3>လက်ဖက်သုပ်</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၂,၅၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 22 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/NGKpPP5W/Fresh-And-Healthy-Delicious-Salad-Facebook-Post-20260720-193053-0000.png"
+                alt="ဂျင်းသုပ်"
+            >
+
+            <div class="menu-info">
+
+                <h3>ဂျင်းသုပ်</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၂,၅၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 23 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/7LLgJf7D/Yellow-White-Healthy-Fresh-Organic-Salad-Poster-20260720-193234-0000.png"
+                alt="မြင်းခွာရွက်သုပ်"
+            >
+
+            <div class="menu-info">
+
+                <h3>မြင်းခွာရွက်သုပ်</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၂,၅၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 24 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/T2nWwrSf/Green-Salad-Photo-Food-Instagram-Post-20260720-154902-0000.png"
+                alt="ပဲခြမ်းသုပ်"
+            >
+
+            <div class="menu-info">
+
+                <h3>ပဲခြမ်းသုပ်</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၂,၅၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 25 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/yxGTJwhB/Green-Minimalist-Healthy-Salad-Instagram-Post-20260724-074005-0000.png"
+                alt="ခရမ်းချဉ်သီးသုပ်"
+            >
+
+            <div class="menu-info">
+
+                <h3>ခရမ်းချဉ်သီးသုပ်</h3>
+
+                <p>
+                    Order Now ၊ 09267034299
+                </p>
+
+                <div class="price">
+                    ၂,၅၀၀ ကျပ်
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 26 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://i.postimg.cc/hjP3jD4T/Picsart-26-07-17-15-31-54-049-copy-1414x2000.jpg"
+                alt="ကျေးဇူးတင်ရှိခြင်း"
+            >
+
+            <div class="menu-info">
+
+                <h3>ကျေးဇူးတင်ရှိခြင်း</h3>
+
+                <p>
+                    ရွှေညီကို 3 သို့
+                    လာရောက်အားပေးမှုအတွက်
+                    ကျေးဇူးတင်ရှိပါတယ်။
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="container" id="contact">
+
+    <h2 class="section-title">
+        ဆက်သွယ်ရန်
+    </h2>
+
+    <div class="contact-content">
+
+        <div class="contact-info">
+
+            <h3>
+                ဆိုင်တည်နေရာနှင့် ဖုန်းနံပါတ်
+            </h3>
+
+            <p>
+                <strong>လိပ်စာ:</strong><br>
+                အမှတ် (၉၉၆)၊ (ပင်းယလမ်း)၊
+                တောင်ဥက္ကလာ၊ ရန်ကုန်မြို့။
+            </p>
+
+            <p>
+                <strong>ဖုန်းနံပါတ်:</strong>
+                09267034299
+            </p>
+
+            <p>
+                <strong>ဖွင့်လှစ်ချိန်:</strong><br>
+                မနက် ၅:၀၀ နာရီမှ
+                ည ၉:၀၀ နာရီအထိ
+            </p>
+
+            <a
+                class="call-button"
+                href="tel:09267034299"
+            >
+                 ဖုန်းခေါ်ရန်
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+         2026 ရွှေညီကို လက်ဖက်ရည် နှင့် စားဖွယ်စုံ။ မူပိုင်ခွင့်။
+    </p>
+
+</footer>
+
+</body>
+</html>
